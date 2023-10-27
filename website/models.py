@@ -7,11 +7,11 @@ defaultmonth=currentMonth = datetime.now().month
 defaultyear=currentMonth = datetime.now().year
 
 
-# class Payment(db.Model):
-#     ID=db.Column(db.Integer, primary_key=True, autoincrement=True)
-#     user_MIS=db.Column(db.String(50),db.ForeignKey('student_info.MIS'))
-#     noOfMeals=db.Column(db.Integer)
-#     total=db.Column(db.Integer)
+class Payment(db.Model):
+    ID=db.Column(db.Integer, primary_key=True, autoincrement=True)
+    user_MIS=db.Column(db.String(50),db.ForeignKey('student_info.MIS'))
+    noOfMeals=db.Column(db.Integer)
+    total=db.Column(db.Integer)
     
 
 class Attendance(db.Model):
@@ -30,7 +30,7 @@ class student_info(db.Model, UserMixin):
     Phone_no = db.Column(db.String(10), nullable=False)
     Password = db.Column(db.String(50), nullable=False)
     notes=db.relationship('Attendance')
-    # payment=db.relationship('Payment')
+    payment=db.relationship('Payment')
 
 
 
