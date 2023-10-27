@@ -19,8 +19,8 @@ class Attendance(db.Model):
     ID=db.Column(db.Integer, primary_key=True, autoincrement=True)
     Year=db.Column((db.String(50)),default=defaultyear)
     Month=db.Column((db.String(50)),default=defaultmonth)
-    Lunch=db.Column(db.String(10), unique=True)
-    Dinner=db.Column(db.String(10), unique=True)
+    Lunch=db.Column(db.String(10))
+    Dinner=db.Column(db.String(10))
 
 class student_info(db.Model, UserMixin):
     Name = db.Column(db.String(50), nullable=False)
